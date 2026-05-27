@@ -1,0 +1,43 @@
+{
+  "name": "opencode-browser-plugin",
+  "version": "1.0.0",
+  "description": "Self-contained browser automation plugin for OpenCode — Playwright-powered, no MCP server needed",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "browser-automation",
+    "playwright",
+    "headless"
+  ],
+  "license": "MIT",
+  "author": "AWhileLater",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AWhileLater/opencode-browser-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AWhileLater/opencode-browser-plugin/issues"
+  },
+  "homepage": "https://github.com/AWhileLater/opencode-browser-plugin#readme",
+  "files": [
+    "dist",
+    "SKILL.md"
+  ],
+  "dependencies": {
+    "playwright": "^1.52.0"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.0.0"
+  }
+}
