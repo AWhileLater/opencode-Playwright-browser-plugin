@@ -178,12 +178,8 @@ async function forceKillBrowser() {
 
 function cleanupSync() {
   if (!browser) return;
-  try {
-    const childProcess = browser.process();
-    if (childProcess) {
-      try { childProcess.kill("SIGKILL"); } catch (_) {}
-    }
-  } catch (_) {}
+  const cp = browser.process();
+  try { if (cp) cp.kill("SIGKILL"); } catch (_) {}
   try { browser.close().catch(() => {}); } catch (_) {}
   browser = null;
   page = null;
@@ -226,7 +222,7 @@ async function handleSnapshot() {
 async function handleClick(args) {
   const locators = await findElement(args.ref);
   await locators.first().click();
-  await page.waitForTimeout(500);
+  await new Promise(r => setTimeout(r, 500));
   const snap = await getSnapshot();
   return `Clicked ${args.ref}\n\n${snapshotText(snap)}`;
 }
@@ -315,7 +311,7 @@ async function handlePress(args) {
 async function handleClickPosition(args) {
   const p = await ensurePage();
   await p.mouse.click(args.x, args.y);
-  await page.waitForTimeout(500);
+  await p.waitForTimeout(500);
   const snap = await getSnapshot();
   return `Clicked at (${args.x}, ${args.y})\n\n${snapshotText(snap)}`;
 }
@@ -325,7 +321,7 @@ async function handleClose() {
   return "Browser closed";
 }
 
-const skillInstructions = `# Browser Automation Tools (opencode-browser-plugin)
+const skillInstructions = `# Browser Automation Tools (opencode-Playwright-browser-plugin)
 
 You have access to browser automation tools. Follow this workflow:
 
