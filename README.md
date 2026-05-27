@@ -12,7 +12,24 @@ Browser automation plugin for [OpenCode](https://opencode.ai) — navigate, clic
 
 ## Installation
 
-### 1. Install the plugin
+### Method 1: Let OpenCode install it (recommended)
+
+Copy this GitHub page URL and paste it to OpenCode with a prompt:
+
+```
+https://github.com/AWhileLater/opencode-Playwright-browser-plugin
+
+Install this plugin for me
+```
+
+OpenCode will automatically:
+1. Run `npm install` in your config directory
+2. Add the plugin to `opencode.jsonc`
+3. Download Chromium browser
+
+Just restart OpenCode after it finishes.
+
+### Method 2: Manual install
 
 ```bash
 cd ~/.config/opencode
@@ -25,9 +42,7 @@ Chromium is downloaded automatically during install. If it fails:
 npx playwright install chromium
 ```
 
-### 2. Add to config
-
-Edit `~/.config/opencode/opencode.jsonc`:
+Then add to `~/.config/opencode/opencode.jsonc`:
 
 ```json
 {
@@ -35,7 +50,7 @@ Edit `~/.config/opencode/opencode.jsonc`:
 }
 ```
 
-Restart OpenCode. You're ready.
+Restart OpenCode after adding the plugin.
 
 ## Usage Demo
 
