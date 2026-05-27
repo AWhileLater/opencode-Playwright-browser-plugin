@@ -1,4 +1,4 @@
-# opencode-browser-plugin
+# opencode-Playwright-browser-plugin
 
 Browser automation plugin for [OpenCode](https://opencode.ai) — navigate, click, type, screenshot, and execute JavaScript on any webpage using Playwright.
 
@@ -13,7 +13,7 @@ Browser automation plugin for [OpenCode](https://opencode.ai) — navigate, clic
 
 ```json
 {
-  "plugin": ["opencode-browser-plugin"]
+  "plugin": ["opencode-Playwright-browser-plugin"]
 }
 ```
 
@@ -40,21 +40,27 @@ Browser automation plugin for [OpenCode](https://opencode.ai) — navigate, clic
 
 ```bash
 cd ~/.config/opencode
-npm install AWhileLater/opencode-browser-plugin
+npm install AWhileLater/opencode-Playwright-browser-plugin
 ```
 
 Add to `opencode.jsonc`:
 
 ```json
 {
-  "plugin": ["opencode-browser-plugin"]
+  "plugin": ["opencode-Playwright-browser-plugin"]
 }
+```
+
+Chromium will be downloaded automatically during `npm install` (postinstall script).
+If it fails, run manually:
+
+```bash
+npx playwright install chromium
 ```
 
 ## Requirements
 
 - OpenCode >= 1.0.0
-- Playwright Chromium (`npx playwright install chromium`)
 
 ## License
 

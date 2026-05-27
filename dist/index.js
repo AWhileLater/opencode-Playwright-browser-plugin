@@ -1,5 +1,7 @@
 import { tool } from "@opencode-ai/plugin";
 import { chromium } from "playwright";
+import { execSync } from "child_process";
+import { existsSync } from "fs";
 
 const interactiveRoles = new Set([
   "button", "link", "textbox", "combobox", "checkbox", "radio",
@@ -20,10 +22,47 @@ function serial(fn) {
   return toolQueue;
 }
 
+function isChromiumInstalled() {
+  try {
+    const execPath = chromium.executablePath();
+    return existsSync(execPath);
+  } catch {
+    try {
+      const r = execSync("npx playwright install --dry-run chromium 2>&1", { encoding: "utf8", timeout: 10000 });
+      return r.includes("already installed");
+    } catch { return false; }
+  }
+}
+
+function installChromium() {
+  console.error("Chromium not found. Installing...");
+  try {
+    execSync("npx playwright install chromium 2>&1", { stdio: "inherit", timeout: 120000 });
+    console.error("Chromium installed successfully.");
+    return true;
+  } catch (e) {
+    console.error(`Failed to install Chromium: ${e.message}`);
+    console.error("Run manually: npx playwright install chromium");
+    return false;
+  }
+}
+
+async function ensureChromium() {
+  if (isChromiumInstalled()) return;
+  if (!installChromium()) {
+    throw new Error(
+      "Playwright Chromium is not installed.\n" +
+      "Run: npx playwright install chromium\n" +
+      "Or set PLAYWRIGHT_BROWSERS_PATH to a custom location."
+    );
+  }
+}
+
 async function ensureBrowser() {
   if (browser && browser.isConnected()) return browser;
   if (browserPromise) return browserPromise;
   browserPromise = (async () => {
+    await ensureChromium();
     const headless = process.env.BROWSER_HEADLESS === "true";
     browser = await chromium.launch({ headless });
     page = await browser.newPage();

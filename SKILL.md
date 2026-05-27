@@ -1,18 +1,18 @@
 ---
-name: browser-plugin
+name: playwright-browser-plugin
 description: Browser automation via Playwright — navigate, click, type, screenshot, and execute JavaScript on any webpage
 license: MIT
 compatibility: opencode
 ---
 
-# Browser Automation (opencode-browser-plugin)
+# Browser Automation (opencode-Playwright-browser-plugin)
 
 Self-managed browser automation via Playwright, built into an OpenCode plugin. **No Chrome extension needed, no user Chrome required.** The plugin starts its own Chromium instance on first tool call and closes it on exit.
 
 ## Architecture
 
 ```
-opencode CLI  ←→  Plugin (opencode-browser-plugin)  ←→  Playwright
+opencode CLI  ←→  Plugin (opencode-Playwright-browser-plugin)  ←→  Playwright
                                                           ↕  Chromium
 ```
 
