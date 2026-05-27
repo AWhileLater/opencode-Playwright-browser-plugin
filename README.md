@@ -183,8 +183,8 @@ Always call `browser_snapshot()` after page changes to get updated @refs.
 
 ## Credits
 
-- [Playwright](https://playwright.dev) — Cross-browser automation framework
-- [OpenCode](https://opencode.ai) — AI coding agent platform
+- [Playwright](https://github.com/microsoft/playwright) — Cross-browser automation framework
+- [OpenCode](https://github.com/anomalyco/opencode) — AI coding agent platform
 
 ## License
 
