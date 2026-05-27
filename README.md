@@ -52,6 +52,26 @@ Then add to `~/.config/opencode/opencode.jsonc`:
 
 Restart OpenCode after adding the plugin.
 
+## Tools Reference
+
+| Tool | Description |
+|------|-------------|
+| `browser_navigate(url)` | Navigate to URL, returns accessibility snapshot |
+| `browser_snapshot()` | Get accessibility tree with interactive @refs |
+| `browser_click(ref)` | Click element by @ref (e.g. @e1) |
+| `browser_type(ref, text, clear?)` | Fill input field (default: clear first) |
+| `browser_select(ref, value)` | Select option in combobox |
+| `browser_press(key)` | Press keyboard key (Enter, Escape, Tab, etc.) |
+| `browser_click_position(x, y)` | Click at pixel coordinates |
+| `browser_scroll(direction, amount?)` | Scroll page (down/up/left/right) |
+| `browser_back()` | Go back in history |
+| `browser_forward()` | Go forward in history |
+| `browser_screenshot(full_page?)` | Take a screenshot (returns PNG) |
+| `browser_evaluate(script)` | Execute JavaScript in page context |
+| `browser_get_text()` | Get all visible text on page |
+| `browser_get_url()` | Get current page URL |
+| `browser_close()` | Close browser and free resources |
+
 ## Usage Demo
 
 ### Open a webpage and interact
@@ -133,26 +153,6 @@ When finished, tell OpenCode:
 browser_close()
 → Browser closed, resources freed
 ```
-
-## Tools Reference
-
-| Tool | Description |
-|------|-------------|
-| `browser_navigate(url)` | Navigate to URL, returns accessibility snapshot |
-| `browser_snapshot()` | Get accessibility tree with interactive @refs |
-| `browser_click(ref)` | Click element by @ref (e.g. @e1) |
-| `browser_type(ref, text, clear?)` | Fill input field (default: clear first) |
-| `browser_select(ref, value)` | Select option in combobox |
-| `browser_press(key)` | Press keyboard key (Enter, Escape, Tab, etc.) |
-| `browser_click_position(x, y)` | Click at pixel coordinates |
-| `browser_scroll(direction, amount?)` | Scroll page (down/up/left/right) |
-| `browser_back()` | Go back in history |
-| `browser_forward()` | Go forward in history |
-| `browser_screenshot(full_page?)` | Take a screenshot (returns PNG) |
-| `browser_evaluate(script)` | Execute JavaScript in page context |
-| `browser_get_text()` | Get all visible text on page |
-| `browser_get_url()` | Get current page URL |
-| `browser_close()` | Close browser and free resources |
 
 ## Workflow
 
