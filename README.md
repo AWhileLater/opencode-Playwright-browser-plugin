@@ -154,10 +154,6 @@ browser_close()
 | `browser_get_url()` | Get current page URL |
 | `browser_close()` | Close browser and free resources |
 
-## Requirements
-
-- OpenCode >= 1.0.0
-
 ## Workflow
 
 ```
@@ -180,6 +176,10 @@ Always call `browser_snapshot()` after page changes to get updated @refs.
 | Env variable | Default | Description |
 |---|---|---|
 | `BROWSER_HEADLESS` | `false` | Set to `true` to run headless (no visible UI) |
+
+## Requirements
+
+- OpenCode >= 1.0.0
 
 ## License
 
