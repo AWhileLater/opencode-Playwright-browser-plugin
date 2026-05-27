@@ -181,6 +181,11 @@ Always call `browser_snapshot()` after page changes to get updated @refs.
 
 - OpenCode >= 1.0.0
 
+## Credits
+
+- [Playwright](https://playwright.dev) — Cross-browser automation framework
+- [OpenCode](https://opencode.ai) — AI coding agent platform
+
 ## License
 
 MIT
