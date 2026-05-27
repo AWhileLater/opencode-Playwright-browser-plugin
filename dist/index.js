@@ -78,9 +78,10 @@ async function ensureBrowser() {
   return browserPromise;
 }
 
-function ensurePage() {
-  if (pageReady) return Promise.resolve(page);
-  return ensureBrowser();
+async function ensurePage() {
+  if (pageReady) return page;
+  await ensureBrowser();
+  return page;
 }
 
 function skipRole(role) {
