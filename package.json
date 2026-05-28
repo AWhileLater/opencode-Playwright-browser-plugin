@@ -1,5 +1,5 @@
 {
-  "name": "opencode-Playwright-browser-plugin",
+  "name": "opencode-playwright-browser-plugin",
   "version": "1.0.0",
   "description": "Self-contained browser automation plugin for OpenCode — Playwright-powered, no MCP server needed",
   "type": "module",
@@ -24,12 +24,12 @@
   "author": "AWhileLater",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AWhileLater/opencode-Playwright-browser-plugin.git"
+    "url": "git+https://github.com/AWhileLater/opencode-playwright-browser-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/AWhileLater/opencode-Playwright-browser-plugin/issues"
+    "url": "https://github.com/AWhileLater/opencode-playwright-browser-plugin/issues"
   },
-  "homepage": "https://github.com/AWhileLater/opencode-Playwright-browser-plugin#readme",
+      "homepage": "https://github.com/AWhileLater/opencode-playwright-browser-plugin#readme",
   "scripts": {
     "postinstall": "node -e \"try { require('child_process').execSync('npx playwright install chromium 2>&1', { stdio: 'inherit' }) } catch(e) { console.error('Failed to install Chromium. Run manually: npx playwright install chromium') }\"",
     "postupdate": "node -e \"try { require('child_process').execSync('npx playwright install chromium 2>&1', { stdio: 'inherit' }) } catch(e) { console.error('Failed to install Chromium. Run manually: npx playwright install chromium') }\""

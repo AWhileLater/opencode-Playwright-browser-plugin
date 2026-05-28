@@ -321,7 +321,7 @@ async function handleClose() {
   return "Browser closed";
 }
 
-const skillInstructions = `# Browser Automation Tools (opencode-Playwright-browser-plugin)
+const skillInstructions = `# Browser Automation Tools (opencode-playwright-browser-plugin)
 
 You have access to browser automation tools. Follow this workflow:
 

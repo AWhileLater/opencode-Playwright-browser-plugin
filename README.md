@@ -1,4 +1,4 @@
-# opencode-Playwright-browser-plugin
+# opencode-playwright-browser-plugin
 
 Browser automation plugin for [OpenCode](https://opencode.ai) — navigate, click, type, screenshot, and execute JavaScript on any webpage using Playwright.
 
@@ -17,7 +17,7 @@ Browser automation plugin for [OpenCode](https://opencode.ai) — navigate, clic
 Copy this GitHub page URL and paste it to OpenCode with a prompt:
 
 ```
-https://github.com/AWhileLater/opencode-Playwright-browser-plugin
+https://github.com/AWhileLater/opencode-playwright-browser-plugin
 
 Install this plugin for me
 ```
@@ -33,7 +33,7 @@ Just restart OpenCode after it finishes.
 
 ```bash
 cd ~/.config/opencode
-npm install AWhileLater/opencode-Playwright-browser-plugin
+npm install AWhileLater/opencode-playwright-browser-plugin
 ```
 
 Chromium is downloaded automatically during install. If it fails:
@@ -46,7 +46,7 @@ Then add to `~/.config/opencode/opencode.jsonc`:
 
 ```json
 {
-  "plugin": ["opencode-Playwright-browser-plugin"]
+  "plugin": ["opencode-playwright-browser-plugin"]
 }
 ```
 
@@ -127,13 +127,13 @@ browser_evaluate("document.title")
 
 In a single OpenCode session, you can:
 
-> "Navigate to github.com/AWhileLater/opencode-Playwright-browser-plugin,
+> "Navigate to github.com/AWhileLater/opencode-playwright-browser-plugin,
 > take a screenshot of the repo page, and get the description text"
 
 This translates to:
 
 ```
-browser_navigate("https://github.com/AWhileLater/opencode-Playwright-browser-plugin")
+browser_navigate("https://github.com/AWhileLater/opencode-playwright-browser-plugin")
   → snapshot with @refs (repo description, navigation links, etc.)
 
 browser_screenshot()

@@ -5,14 +5,14 @@ license: MIT
 compatibility: opencode
 ---
 
-# Browser Automation (opencode-Playwright-browser-plugin)
+# Browser Automation (opencode-playwright-browser-plugin)
 
 Self-managed browser automation via Playwright, built into an OpenCode plugin. **No Chrome extension needed, no user Chrome required.** The plugin starts its own Chromium instance on first tool call and closes it on exit.
 
 ## Architecture
 
 ```
-opencode CLI  ←→  Plugin (opencode-Playwright-browser-plugin)  ←→  Playwright
+opencode CLI  ←→  Plugin (opencode-playwright-browser-plugin)  ←→  Playwright
                                                           ↕  Chromium
 ```
 
