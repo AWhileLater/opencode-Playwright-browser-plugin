@@ -63,8 +63,9 @@ async function ensureBrowser() {
   if (browserPromise) return browserPromise;
   browserPromise = (async () => {
     await ensureChromium();
-    const headless = process.env.BROWSER_HEADLESS === "true";
-    browser = await chromium.launch({ headless });
+    const headless = process.env.BROWSER_HEADLESS !== "false";
+    const proxy = process.env.HTTPS_PROXY || process.env.ALL_PROXY || undefined;
+    browser = await chromium.launch({ headless, proxy: proxy ? { server: proxy } : undefined });
     page = await browser.newPage();
     pageReady = true;
     browser.on("disconnected", () => {
