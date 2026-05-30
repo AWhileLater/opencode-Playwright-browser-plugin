@@ -12,28 +12,18 @@ Browser automation plugin for [OpenCode](https://opencode.ai) — navigate, clic
 
 ## Installation
 
-### Method 1: Let OpenCode install it (recommended)
+> **Note**: This plugin is not published on npm. Use the methods below to install from GitHub directly.
 
-Copy this GitHub page URL and paste it to OpenCode with a prompt:
+### Prerequisites
 
-```
-https://github.com/AWhileLater/opencode-playwright-browser-plugin
+- [OpenCode](https://opencode.ai) >= 1.0.0
+- [Node.js](https://nodejs.org/) 18+ (for npm)
 
-Install this plugin for me
-```
-
-OpenCode will automatically:
-1. Run `npm install` in your config directory
-2. Add the plugin to `opencode.jsonc`
-3. Download Chromium browser
-
-Just restart OpenCode after it finishes.
-
-### Method 2: Manual install
+### Step 1: Install the package
 
 ```bash
 cd ~/.config/opencode
-npm install AWhileLater/opencode-playwright-browser-plugin
+npm install git+https://github.com/AWhileLater/opencode-playwright-browser-plugin.git
 ```
 
 Chromium is downloaded automatically during install. If it fails:
@@ -42,15 +32,21 @@ Chromium is downloaded automatically during install. If it fails:
 npx playwright install chromium
 ```
 
-Then add to `~/.config/opencode/opencode.jsonc`:
+### Step 2: Add to OpenCode config
+
+Edit `~/.config/opencode/opencode.jsonc`:
 
 ```json
 {
-  "plugin": ["opencode-playwright-browser-plugin"]
+  "plugin": ["~/.config/opencode/node_modules/opencode-playwright-browser-plugin"]
 }
 ```
 
-Restart OpenCode after adding the plugin.
+> Use the **local path** format (`~/.config/opencode/node_modules/...`) rather than the bare package name. Since the plugin is not on the npm registry, OpenCode will fail to resolve it by name alone.
+
+### Step 3: Restart OpenCode
+
+Restart OpenCode and verify the plugin loaded successfully.
 
 ## Tools Reference
 
